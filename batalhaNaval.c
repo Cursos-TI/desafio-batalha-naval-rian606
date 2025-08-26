@@ -1,40 +1,39 @@
 #include <stdio.h>
 
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+int main(){
 
-int main() {
-    // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
-    // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
+    int valor1, valor2; //valor modificavel (obs coloquei fora do for)
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+    char linhas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; // vetor linha
 
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+    int colunas[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; //vetor coluna
 
-    // Exemplos de exibição das habilidades:
-    // Exemplo para habilidade em cone:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 1 1 1 1 1
-    
-    // Exemplo para habilidade em octaedro:
-    // 0 0 1 0 0
-    // 0 1 1 1 0
-    // 0 0 1 0 0
+    int mar[10][10] = {
+        {0 ,0 ,3 ,3 ,3 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0},   //matriz 10 X 10
+        {0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0}
+    };
 
-    // Exemplo para habilidade em cruz:
-    // 0 0 1 0 0
-    // 1 1 1 1 1
-    // 0 0 1 0 0
+    printf("   %c %c %c %c %c %c %c %c %c %c\n", linhas[0], linhas[1], linhas[2], linhas[3],
+         linhas[4], linhas[5], linhas[6], linhas[7], linhas[8], linhas[9]); //print das linhas, como nao é necessario repeticao deixei fora do for
 
+    for (valor1 = 0 ; valor1 < 9; valor1++) // abrindo for com suas especificaçoes
+    {
+        printf(" %d %d %d %d %d %d %d %d %d %d %d\n", colunas[valor1], mar[valor1][0], mar[valor1][1], mar[valor1][2], mar[valor1][3],
+        mar[valor1][4], mar[valor1][5], mar[valor1][6], mar[valor1][7], mar[valor1][8], mar[valor1][9]);
+    } //montando o codigo
+
+     printf("%d %d %d %d %d %d %d %d %d %d %d\n", colunas[valor1], mar[valor1][0], mar[valor1][1], mar[valor1][2], mar[valor1][3],
+        mar[valor1][4], mar[valor1][5], mar[valor1][6], mar[valor1][7], mar[valor1][8], mar[valor1][9]);
+            //deixei a ultima linha fora apenas para encaixar corretamente o tabuleiro
     return 0;
+
+
 }
