@@ -8,32 +8,42 @@ int main(){
     //vetor coluna
 
     int mar[10][10] = {
-        {0 ,0 ,3 ,3 ,3 ,0 ,0 ,0 ,3 ,0},
-        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0}, 
-        {0 ,0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 ,0},
         {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
-        {0 ,0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0},   //matriz 10 X 10
-        {0 ,0 ,0 ,3 ,0 ,3 ,0 ,0 ,0 ,0},
-        {0 ,0 ,3 ,0 ,0 ,3 ,0 ,0 ,0 ,0},
-        {0 ,3 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
+        {0 ,0 ,1 ,0 ,0 ,0 ,0 ,1 ,0 ,0}, 
+        {1 ,5 ,5 ,5 ,1 ,0 ,5 ,1 ,1 ,0},
+        {0 ,0 ,1 ,0 ,0 ,5 ,1 ,1 ,1 ,1},
+        {0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0 ,0},   //matriz 10 X 10
+        {0 ,0 ,0 ,0 ,0 ,0 ,1 ,3 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,1 ,1 ,5 ,0 ,0},
+        {0 ,0 ,0 ,0 ,0 ,0 ,1 ,3 ,0 ,0},
         {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
         {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0}
     };
+    int alvo = mar[1][2];
 
-    printf("   %c %c %c %c %c %c %c %c %c %c\n ", linhas[0], linhas[1], linhas[2], linhas[3],
-         linhas[4], linhas[5], linhas[6], linhas[7], linhas[8], linhas[9]);
-        //print das linhas, como nao é necessario 
-        //repeticao deixei fora do for
+    printf("  ");//espaço inicial 
+
+        for(int i = 0; i < 10; i++)
+        {
+            printf(" %c", linhas[i]);// sempre que for verdadeiro adiciona um char
+        }
+
+        printf("\n");// pulando linha apenas
 
         for (int i = 0; i < 10; i++)
         {
+            if (i < 9)
+            {
+                printf(" ");// sempre que i > 10 adiciona um espaço
+            }
+            
             printf("%d", colunas[i]);
 
             for (int j = 0; j < 10; j++)// modifiquei o for, mais compacto e facil entendimento
-            {
+            { 
                 printf(" %d", mar[i][j]);// exibicao das matrizes
             }
-            printf("\n ");// apenas pra dar uma linha a cada matriz 
+             printf("\n");// apenas pra dar uma linha a cada matriz
         }
         
     return 0;
