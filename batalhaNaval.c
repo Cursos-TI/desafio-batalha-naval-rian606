@@ -1,52 +1,88 @@
 #include <stdio.h>
+
+#define linhas 5
+#define colunas 5
+
 int main(){
 
-    char linhas[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'}; 
-    // vetor linha
+int matriz[linhas][colunas] ={ 
+{0, 0, 0 ,0 ,0},
+{0 ,0 ,0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0}
+};
+for (int i = 0; i < linhas; i++)
+{
+    for (int j = 0; j < colunas; j++)
+    {
+        matriz[0][2] = 1;
+        matriz[1][1] = 1;
+        matriz[1][2] = 1;
+        matriz[1][3] = 1;
+        matriz[1][2] = 1;
+        matriz[2][0] = 1;
+        matriz[2][1] = 1;
+        matriz[2][2] = 1;
+        matriz[2][3] = 1;
+        matriz[2][4] = 1;
 
-    int colunas[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 
-    //vetor coluna
+        printf(" %d", matriz[i][j]);
+    }
+    printf("\n");
+}
 
-    int mar[10][10] = {
-        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
-        {0 ,0 ,1 ,0 ,0 ,0 ,0 ,1 ,0 ,0}, 
-        {1 ,5 ,5 ,5 ,1 ,0 ,5 ,1 ,1 ,0},
-        {0 ,0 ,1 ,0 ,0 ,5 ,1 ,1 ,1 ,1},
-        {0 ,0 ,0 ,0 ,3 ,0 ,0 ,0 ,0 ,0},   //matriz 10 X 10
-        {0 ,0 ,0 ,0 ,0 ,0 ,1 ,3 ,0 ,0},
-        {0 ,0 ,0 ,0 ,0 ,1 ,1 ,5 ,0 ,0},
-        {0 ,0 ,0 ,0 ,0 ,0 ,1 ,3 ,0 ,0},
-        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0},
-        {0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0}
-    };
-    int alvo = mar[1][2];
+printf("\n");
 
-    printf("  ");//espaço inicial 
+int matriz2[linhas][colunas] ={ 
+{0, 0, 0 ,0 ,0},
+{0 ,0 ,0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0}
+};
 
-        for(int i = 0; i < 10; i++)
-        {
-            printf(" %c", linhas[i]);// sempre que for verdadeiro adiciona um char
-        }
+for (int i = 0; i < 5; i++)
+{
+    for (int j = 0; j < 5; j++)
+    {
+        matriz2[1][2] = 1;
+        matriz2[2][0] = 1;
+        matriz2[2][1] = 1;
+        matriz2[2][2] = 1;
+        matriz2[2][3] = 1;
+        matriz2[2][4] = 1;
+        matriz2[3][2] = 1;
 
-        printf("\n");// pulando linha apenas
+        printf(" %d", matriz2[i][j]);
+    }
+    printf("\n");
+}
 
-        for (int i = 0; i < 10; i++)
-        {
-            if (i < 9)
-            {
-                printf(" ");// sempre que i > 10 adiciona um espaço
-            }
-            
-            printf("%d", colunas[i]);
+printf("\n");
 
-            for (int j = 0; j < 10; j++)// modifiquei o for, mais compacto e facil entendimento
-            { 
-                printf(" %d", mar[i][j]);// exibicao das matrizes
-            }
-             printf("\n");// apenas pra dar uma linha a cada matriz
-        }
-        
-    return 0;
+int matriz3[linhas][colunas] ={ 
+{0, 0, 0 ,0 ,0},
+{0 ,0 ,0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0},
+{0, 0, 0 ,0 ,0}
+};
 
+for (int i = 0; i < 5; i++)
+{
+    for (int j = 0; j < 5; j++)
+    {
+        matriz3[1][2] = 1;
+        matriz3[2][1] = 1;
+        matriz3[2][2] = 1;
+        matriz3[2][3] = 1;
+        matriz3[3][2] = 1;
 
+        printf(" %d", matriz3[i][j]);
+    }
+    printf("\n");
+}
+
+return 0;
 }
